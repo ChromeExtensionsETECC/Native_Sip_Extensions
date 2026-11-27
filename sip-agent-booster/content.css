@@ -1,0 +1,23 @@
+#sipb-hud{position:fixed;right:12px;bottom:48px;z-index:2147483647;display:flex;gap:8px;align-items:flex-start;
+  background:#1f2937;color:#fff;font:12px/1.4 system-ui,sans-serif;padding:7px 10px;border-radius:10px;
+  box-shadow:0 2px 10px rgba(0,0,0,.3);cursor:grab;opacity:.92;touch-action:none;user-select:none}
+#sipb-hud.sipb-drag{cursor:grabbing;opacity:1;box-shadow:0 8px 24px rgba(0,0,0,.45)}
+#sipb-hud .sipb-dot{width:10px;height:10px;border-radius:50%;background:#9ca3af;margin-top:3px;flex:none}
+#sipb-hud[data-q=ok] .sipb-dot{background:#22c55e}
+#sipb-hud[data-q=warn] .sipb-dot{background:#f59e0b}
+#sipb-hud[data-q=bad] .sipb-dot,#sipb-hud[data-q=nomedia] .sipb-dot{background:#ef4444;animation:sipb-p 1s infinite}
+#sipb-hud .sipb-pip{margin-left:6px;background:#374151;color:#fff;border:0;border-radius:6px;padding:0 6px;cursor:pointer;font-size:13px;align-self:flex-start}
+#sipb-hud .sipb-pip:hover{background:#4b5563}
+#sipb-hud .sipb-det{display:none;margin-top:4px;color:#d1d5db}
+#sipb-hud.sipb-open .sipb-det{display:block}
+.sipb-toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);z-index:2147483647;background:#111827;color:#fff;
+  padding:8px 16px;border-radius:8px;font:13px system-ui,sans-serif;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+/* barra de captação do microfone (fina, na base do HUD) */
+#sipb-hud{overflow:hidden}
+#sipb-hud .sipb-mic{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.08);opacity:0;transition:opacity .2s}
+#sipb-hud .sipb-mic.on{opacity:1}
+#sipb-hud .sipb-mic i{display:block;height:100%;width:0;background:#22c55e;transition:width .09s linear}
+#sipb-hud .sipb-mic.hot i{background:#f59e0b}
+#sipb-hud .sipb-mic.mute{background:#7f1d1d}
+#sipb-hud .sipb-mic.mute i{width:0!important}
+@keyframes sipb-p{50%{opacity:.3}}

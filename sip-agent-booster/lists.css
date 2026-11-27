@@ -1,0 +1,57 @@
+/* Fila de Chamadas e Histórico de Chamadas (Native v2) — marca: azul #2d486a, laranja #f37435 */
+.sipb-panel { position: relative; background: #fff; }
+
+/* barra de título do painel */
+.sipb-panel > div.bg-gray-800 { background: linear-gradient(90deg, #1f2937, #243b58) !important; box-shadow: 0 1px 0 rgba(255, 255, 255, .06) inset; }
+.sipb-panel > div.bg-gray-800 span.text-white { font-weight: 600; letter-spacing: .02em; }
+
+/* cabeçalho da tabela */
+.sipb-panel .MuiTableCell-head {
+  background: #eef2f8 !important; color: #2d486a !important; border-bottom: 2px solid #d9e2ef !important;
+  padding: 8px 10px !important; font-size: 11px !important; text-transform: uppercase; letter-spacing: .06em;
+}
+.sipb-panel .MuiTableCell-head p { font-size: 11px; font-weight: 700; }
+.sipb-panel .MuiTableCell-head svg { color: #2d486a; }
+
+/* linhas */
+.sipb-panel .MuiTableBody-root .MuiTableRow-root > td {
+  padding: 12px 10px !important; font-size: 13px; color: #1f2d3f; border-bottom: 1px solid #edf1f6 !important; font-variant-numeric: tabular-nums;
+  transition: background-color .12s;
+}
+.sipb-panel .MuiTableBody-root .MuiTableRow-root > td:first-child { box-shadow: inset 3px 0 0 transparent; }
+.sipb-panel .MuiTableBody-root .MuiTableRow-root:hover > td { background: #eef3fa; }
+
+/* coluna da fila (Suporte, Comercial…) */
+.sipb-panel td.sipb-fila { font-weight: 600; color: #2d486a; }
+
+/* histórico: o Native pinta a linha de rosa (perdida/abandonada); aqui vira um vermelho suave com faixa lateral */
+.sipb-panel .MuiTableRow-root.sipb-miss > td { background: #fdeeee !important; }
+.sipb-panel .MuiTableRow-root.sipb-miss > td:first-child { box-shadow: inset 3px 0 0 #ef4444; }
+.sipb-panel .MuiTableRow-root.sipb-miss:hover > td { background: #fbdede !important; }
+.sipb-panel .MuiTableRow-root.sipb-miss > td.sipb-dur { color: #b91c1c; font-weight: 600; }
+.sipb-panel .MuiTableRow-root.sipb-ok > td { background: #f1faf3 !important; }
+.sipb-panel .MuiTableRow-root.sipb-ok > td:first-child { box-shadow: inset 3px 0 0 #22c55e; }
+.sipb-panel .MuiTableRow-root.sipb-ok:hover > td { background: #e3f5e8 !important; }
+
+/* fila: destaque pelo tempo de espera (limites no lists.js) */
+.sipb-panel .MuiTableRow-root.sipb-w1 > td { background: #fff8ec !important; }
+.sipb-panel .MuiTableRow-root.sipb-w1 > td:first-child { box-shadow: inset 3px 0 0 #f59e0b; }
+.sipb-panel .MuiTableRow-root.sipb-w1 > td.sipb-wait { color: #b45309; font-weight: 700; }
+.sipb-panel .MuiTableRow-root.sipb-w2 > td { background: #fff1f0 !important; }
+.sipb-panel .MuiTableRow-root.sipb-w2 > td:first-child { box-shadow: inset 3px 0 0 #ef4444; }
+.sipb-panel .MuiTableRow-root.sipb-w2 > td.sipb-wait { color: #b91c1c; font-weight: 700; }
+
+/* estado vazio */
+.sipb-panel .MuiTableContainer-root { position: relative; }
+.sipb-panel.sipb-empty .MuiTableContainer-root::after {
+  position: absolute; left: 0; right: 0; top: 90px; text-align: center; padding: 0 24px;
+  font: 14px system-ui, -apple-system, "Segoe UI", sans-serif; color: #8d9bb0;
+}
+.sipb-panel.sipb-q.sipb-empty .MuiTableContainer-root::after { content: "Nenhuma chamada aguardando na fila"; }
+.sipb-panel.sipb-h.sipb-empty .MuiTableContainer-root::after { content: "Nenhuma chamada no histórico"; }
+
+/* paginação */
+.sipb-panel > div.border-t { background: #fafbfd; border-top-color: #e3e9f2 !important; }
+.sipb-panel > div.border-t select { border-radius: 10px; border: 1px solid #d3dce8; background: #fff; color: #2d486a; font-weight: 500; cursor: pointer; }
+.sipb-panel > div.border-t button.rounded-full { border-color: #d3dce8; transition: background-color .12s; }
+.sipb-panel > div.border-t button.rounded-full:not(.bg-nativeBlue):hover { background: #eef3fa; }

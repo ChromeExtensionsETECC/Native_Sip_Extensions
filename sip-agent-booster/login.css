@@ -1,0 +1,104 @@
+/* Tela de login do Native — cores da marca: azul #2d486a, laranja #f37435, verde #429733 */
+
+/* ---------- fundo com o padrão da logo ---------- */
+html.nb-login-on body {
+  background-color: #eef2f8;
+  background-image:
+    radial-gradient(70% 60% at 88% 8%, rgba(243, 116, 53, .12), transparent 60%),
+    radial-gradient(65% 65% at 8% 100%, rgba(45, 72, 106, .20), transparent 62%),
+    linear-gradient(180deg, #f5f8fc, #e5ebf4);
+}
+#nb-pattern {
+  position: fixed; inset: -35%; z-index: -1; pointer-events: none;
+  background-image: var(--nb-tile);
+  background-size: 300px 240px;
+  background-repeat: repeat;
+  opacity: .085;
+  transform: rotate(-14deg);
+}
+
+/* ---------- modal de login ---------- */
+.login { position: relative; display: flex; align-items: center; justify-content: center; min-height: calc(100vh - 24px); }
+.wrap-login100 {
+  background: rgba(255, 255, 255, .86) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, .8) !important;
+  border-radius: 26px !important;
+  box-shadow: 0 34px 70px -24px rgba(45, 72, 106, .45), 0 2px 0 rgba(255, 255, 255, .9) inset !important;
+  width: 420px; max-width: calc(100vw - 32px);
+  padding: 40px 42px 26px !important;
+  height: auto !important; min-height: 0 !important; margin: 0 !important;
+}
+.login100-form-title { height: auto !important; display: block; padding-bottom: 20px !important; margin: 0 !important; }
+.login100-pic { height: auto !important; }
+.login100-pic img { display: block; width: 190px !important; height: auto !important; margin: 0 auto; }
+.login100-pic::after {
+  content: "Acesse sua conta"; display: block; text-align: center; margin-top: 14px;
+  font: 600 15px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif; color: #2d486a; letter-spacing: .01em;
+}
+.login100-form input.form-control {
+  height: 46px; border-radius: 12px; border: 1px solid #d3dce8; background: #fff;
+  padding: 0 14px; font-size: 14px; box-shadow: none; color: #1f2d3f;
+  transition: border-color .15s, box-shadow .15s;
+}
+.login100-form > input.form-control { margin-bottom: 12px; width: 100%; }
+.login100-form .input-group.mb-3 { margin-bottom: 12px !important; }
+.login100-form input.form-control::placeholder { color: #8d9bb0; }
+.login100-form input.form-control:focus {
+  border-color: #2d486a; box-shadow: 0 0 0 3px rgba(45, 72, 106, .16); outline: 0;
+}
+.login100-form .input-group > .form-control:not(:last-child) { border-radius: 12px 0 0 12px; }
+.login100-form .input-group-text {
+  border-radius: 0 12px 12px 0; background: #fff; border: 1px solid #d3dce8; border-left: 0; color: #5f7391;
+}
+.login100-form .input-group-text:hover { color: #2d486a; }
+.login100-form-btn {
+  height: 50px !important; border-radius: 13px !important; border: 0 !important;
+  background: linear-gradient(135deg, #4aa63a, #429733 55%, #357c28) !important;
+  box-shadow: 0 12px 24px -10px rgba(66, 151, 51, .75);
+  font-weight: 600; letter-spacing: .03em;
+  transition: transform .1s, box-shadow .15s, filter .15s;
+}
+.login100-form-btn::before { display: none !important; }
+.login100-form-btn:hover { transform: translateY(-1px); filter: brightness(1.06); box-shadow: 0 16px 28px -10px rgba(66, 151, 51, .85); }
+.login100-form-btn:active { transform: translateY(0); }
+.login100-form .text-center.p-2 a { color: #2d486a; font-size: 13px; text-decoration: none; border-bottom: 1px dotted rgba(45, 72, 106, .5); }
+.login100-form .text-center.p-2 a:hover { color: #f37435; border-bottom-color: #f37435; }
+.login100-form .alert { border-radius: 12px; font-size: 13px; margin-bottom: 12px !important; }
+
+/* ---------- lateral com o histórico de versões ---------- */
+#nb-changelog {
+  position: fixed; left: 32px; top: 50%; transform: translateY(-50%); z-index: 5;
+  width: 320px; max-height: min(78vh, 640px); display: flex; flex-direction: column;
+  border-radius: 24px; padding: 22px 8px 14px 22px;
+  background: linear-gradient(160deg, #2d486a, #223a58);
+  color: #e6edf7; box-shadow: 0 30px 60px -26px rgba(34, 58, 88, .8);
+  font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; overflow: hidden;
+}
+#nb-changelog::before {
+  content: ""; position: absolute; left: 0; top: 0; right: 0; height: 5px; border-radius: 24px 24px 0 0;
+  background: linear-gradient(90deg, #f37435, #f9a15f);
+}
+#nb-changelog h3 { margin: 4px 14px 2px 0; font-size: 16px; font-weight: 700; color: #fff; }
+#nb-changelog .nb-sub { margin: 0 14px 14px 0; font-size: 12px; color: #a9bbd3; }
+#nb-changelog .nb-list { overflow-y: auto; padding-right: 14px; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .25) transparent; }
+#nb-changelog .nb-rel { position: relative; padding: 0 0 14px 18px; border-left: 2px solid rgba(255, 255, 255, .14); margin-left: 5px; }
+#nb-changelog .nb-rel:last-child { padding-bottom: 4px; }
+#nb-changelog .nb-rel::before {
+  content: ""; position: absolute; left: -6px; top: 3px; width: 10px; height: 10px; border-radius: 50%;
+  background: #223a58; border: 2px solid #8fa7c6;
+}
+#nb-changelog .nb-rel.nb-cur::before { background: #f37435; border-color: #f37435; box-shadow: 0 0 0 4px rgba(243, 116, 53, .25); }
+#nb-changelog .nb-v { display: flex; align-items: center; gap: 8px; font-weight: 700; color: #fff; }
+#nb-changelog .nb-tag {
+  font-size: 10px; font-weight: 700; letter-spacing: .04em; padding: 1px 7px; border-radius: 99px;
+  background: #f37435; color: #fff; text-transform: uppercase;
+}
+#nb-changelog .nb-rel ul { margin: 4px 0 0; padding-left: 16px; color: #cfdbec; }
+#nb-changelog .nb-rel li { margin: 2px 0; }
+#nb-changelog .nb-more {
+  margin: 8px 14px 0 0; padding: 7px 0; border: 1px solid rgba(255, 255, 255, .2); border-radius: 10px;
+  background: transparent; color: #dbe6f5; font: inherit; font-size: 12px; cursor: pointer;
+}
+#nb-changelog .nb-more:hover { background: rgba(255, 255, 255, .08); }
+@media (max-width: 960px) { #nb-changelog { display: none; } }

@@ -1,0 +1,103 @@
+{
+  "manifest_version": 3,
+  "name": "SIP Agent Booster",
+  "version": "0.7.4",
+  "description": "Atalhos, alertas, diagnóstico de qualidade e melhorias de interface para o softphone SIP do agente (Native Infinity).",
+  "permissions": [
+    "storage",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://eteccnet.native-infinity.com.br/*"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://eteccnet.native-infinity.com.br/*"
+      ],
+      "js": [
+        "inject.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://eteccnet.native-infinity.com.br/*"
+      ],
+      "js": [
+        "content.js",
+        "pip.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://eteccnet.native-infinity.com.br/*"
+      ],
+      "js": [
+        "changelog.js",
+        "login.js"
+      ],
+      "css": [
+        "login.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://eteccnet.native-infinity.com.br/*"
+      ],
+      "js": [
+        "queues.js"
+      ],
+      "css": [
+        "queues.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://eteccnet.native-infinity.com.br/*"
+      ],
+      "js": [
+        "lists.js"
+      ],
+      "css": [
+        "lists.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "SIP Agent Booster",
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

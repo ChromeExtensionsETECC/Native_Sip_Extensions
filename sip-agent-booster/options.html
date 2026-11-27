@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br"><head><meta charset="utf-8"><title>SIP Agent Booster</title>
+<style>
+body{font:14px system-ui,sans-serif;margin:0;padding:16px;min-width:420px;max-width:640px;color:#111}
+h1{font-size:16px;margin:0 0 12px}h2{font-size:13px;margin:16px 0 6px;color:#555;text-transform:uppercase}
+label{display:flex;align-items:center;gap:8px;margin:4px 0}label span{width:150px;flex:none}
+input[type=text],input[type=number]{flex:1;padding:4px 6px;border:1px solid #bbb;border-radius:4px}
+button{margin-top:14px;padding:6px 14px;background:#1b4b8f;color:#fff;border:0;border-radius:6px;cursor:pointer}
+small{color:#666}#ok{color:#2e7d32;margin-left:8px}
+</style></head><body>
+<h1>SIP Agent Booster</h1>
+<h2>Recursos</h2>
+<label><input type="checkbox" id="hud"> Indicador de qualidade da chamada</label>
+<label><input type="checkbox" id="alerts"> Alertas (chamada entrando / qualidade ruim)</label>
+<label><input type="checkbox" id="shortcuts"> Atalhos de teclado</label>
+<label><input type="checkbox" id="clickToCall"> Duplo clique em número copia para o discador</label>
+<h2>Atendimento automático</h2>
+<label><input type="checkbox" id="autoAnswer"> Atender sozinho se a chamada tocar por muito tempo <small>(desligado por padrão)</small></label>
+<label><span>Atender após (segundos)</span><input type="number" id="autoAnswerDelay" min="1" max="120"></label>
+<small>Com 10 segundos, a chamada que tocar por 10 segundos é atendida no seguinte. Vale para cada pessoa, neste navegador.</small>
+<h2>Atalhos</h2>
+<label><span>Atender</span><input type="text" id="k_answer"></label>
+<label><span>Desligar</span><input type="text" id="k_hangup"></label>
+<label><span>Mudo</span><input type="text" id="k_mute"></label>
+<label><span>Foco no discador</span><input type="text" id="k_dial"></label>
+<label><span>Ligar</span><input type="text" id="k_call"></label>
+<label><span>Mini-telefone (PiP)</span><input type="text" id="k_pip"></label>
+<label><span>Diagnóstico (copiar botões)</span><input type="text" id="k_dump"></label>
+<small>Formato: Alt+A, Ctrl+Shift+H…</small>
+<h2>Seletores CSS (opcional)</h2>
+<small>Vazio = detecção automática pelo texto do botão.</small>
+<label><span>Atender</span><input type="text" id="s_answer"></label>
+<label><span>Desligar</span><input type="text" id="s_hangup"></label>
+<label><span>Mudo</span><input type="text" id="s_mute"></label>
+<label><span>Ligar</span><input type="text" id="s_call"></label>
+<label><span>Campo de discagem</span><input type="text" id="s_dialInput"></label>
+<h2>Limites de alerta</h2>
+<label><span>RTT (ms)</span><input type="number" id="t_rttWarn"></label>
+<label><span>Jitter (ms)</span><input type="number" id="t_jitterWarn"></label>
+<label><span>Perda (%)</span><input type="number" id="t_lossWarn"></label>
+<button id="save">Salvar</button><span id="ok"></span>
+<script src="options.js"></script>
+</body></html>

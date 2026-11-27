@@ -1,0 +1,8 @@
+# pacotes gerados (o código-fonte é a fonte da verdade)
+dist/*.zip
+
+# sistema e editor
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
